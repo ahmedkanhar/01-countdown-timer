@@ -2,14 +2,10 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-// Extend InputProps with an optional custom field to avoid lint errors
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  customField?: string; // Example custom field for future extensibility
-}
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, customField, ...props }, ref) => {
+  ({ className, type, ...props }, ref) => {
     return (
       <input
         type={type}
